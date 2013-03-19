@@ -1,0 +1,20 @@
+%h1 Парсер данных туроператора Лабиринт
+%p Москва - Греция - КОС
+%p http://online.labirint.travel/freight_monitor
+
+= form_tag(home_path, remote: true) do
+  .date-picker
+    = text_field_tag :departure_date, nil, class: :datepicker
+    = text_field_tag :arrival_date, nil, class: :datepicker
+  .formats
+    = radio_button_tag(:format, :html, checked: true)
+    = label_tag(:format_html, :html)
+    = radio_button_tag(:format, :xml)
+    = label_tag(:format_xml, :xml)
+    = radio_button_tag(:format, :json)
+    = label_tag(:format_json, :json)
+  .controls
+    = submit_tag "Парсить" 
+
+.data-container
+  = render template: "home/flights", layout: nil

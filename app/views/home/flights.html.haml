@@ -1,0 +1,8 @@
+%table
+  %tbody
+    - @flights.each do |flight|
+      %tr
+        %td= flight.date
+        %td= flight.transport
+        %td= flight.departure_arrival_airport
+        %td= flight.free_space
