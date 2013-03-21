@@ -71,7 +71,6 @@ describe Flight do
       Flight.destroy_all
       @first = create(:flight, departure_time: 1.day.ago)
       @last  = create(:flight, departure_time: 4.day.ago)
-      puts Flight.count
     end
 
     it "default scope" do
