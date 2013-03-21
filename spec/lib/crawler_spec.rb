@@ -40,7 +40,7 @@ describe Crawler do
 
       crawler.fetch
       crawler.content.css("table").count.should == 0
-      puts "errors: #{ crawler.errors.full_messages }"
+      puts "errors:: #{ crawler.errors.full_messages }"
       crawler.errors.should be_present
     end
 
